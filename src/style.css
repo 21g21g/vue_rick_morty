@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ .hone{
+        @apply text-amber-300
+    }
+    .list_style{
+        @apply list-disc
+    }
+    .curser{
+        @apply cursor-pointer
+    }
+    .location{
+        @apply flex flex-row gap-1
+    }
+    .h-five{
+        @apply text-slate-50
+    }
+
+/* .carousel__prev{
+    @apply text-white 
+} */
