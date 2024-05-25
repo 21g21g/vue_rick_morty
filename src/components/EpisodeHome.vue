@@ -20,6 +20,7 @@ const { result, loading, error } = useQuery(gql`
     }
   }
 `)
+
 </script>
 
 <template>
@@ -32,9 +33,9 @@ const { result, loading, error } = useQuery(gql`
       
       <Slide v-else v-for="epis in result?.episodes.results || []" :key="epis.id" class="p-2">
         <div class="flex flex-col h-full bg-white rounded-lg shadow-lg overflow-hidden">
-          <div class="h-2/3">
+         <div class="h-2/3">
             <router-link :to="`/episode/${epis.id}`">
-              <img v-if="epis.characters.length > 0" :src="epis.characters[0].image" alt="No image available" class="w-full h-full object-cover">
+              <img v-if="epis.characters.length > 0" :src="epis.characters[epis.characters.length-1].image" alt="No image available" class="w-full h-full object-cover">
             </router-link>
           </div>
           <div class="p-4 bg-gray-800 text-white flex-1 flex flex-col justify-between">

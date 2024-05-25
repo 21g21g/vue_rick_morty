@@ -5,29 +5,32 @@ import {Slide} from "vue3-carousel"
 import {Navigation} from "vue3-carousel"
 import {Pagination} from "vue3-carousel"
 import 'vue3-carousel/dist/carousel.css'
-import imag1 from "../assets/sttt.jpg"
-import imag2 from "../assets/brea.jpg"
-import imag3 from "../assets/game-of.webp"
+// import imag1 from "../assets/sttt.jpg"
+// import imag2 from "../assets/brea.jpg"
+// import imag3 from "../assets/game-of.webp"
+import imag4 from "../assets/38.jpeg"
+import imag5 from "../assets/175.jpeg"
+import imag6 from "../assets/181.jpeg"
 
 const corosol=ref([
     {
         id:1,
         name:"Game of Throne",
-        ima1:imag1,
+        ima1:imag4,
         description:"Game of Thrones is an epic fantasy drama television series based on George R.R. Martin's 'A Song of Ice and Fire' novels. Set in the fictional continents of Westeros and Essos, the series follows noble families as they vie for control of the Iron Throne and the Seven Kingdoms of Westeros.",
         Geners:['Fantacy','Drama','Adventure']
     },
      {
         id:2,
         name:"Stranger Things",
-        ima1:imag2,
+        ima1:imag5,
         description:"Stranger Things is a supernatural horror series created by the Duffer Brothers. Set in the 1980s in the fictional town of Hawkins, Indiana, the show revolves around a group of kids who encounter mysterious events involving government experiments, supernatural forces, and alternate dimensions.",
         Geners:['Fantacy','Drama','Adventure']
     },
      {
         id:3,
         name:"Breaking Bad",
-        ima1:imag3,
+        ima1:imag6,
         description:"Breaking Bad is a crime drama series created by Vince Gilligan. It follows Walter White, a high school chemistry teacher turned methamphetamine manufacturer, as he descends into a world of crime to secure his family's financial future after being diagnosed with cancer.",
         Geners:['Crime','Drama','Thriler']
     },

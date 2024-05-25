@@ -28,7 +28,7 @@ const toggleShowMore = () => {
 <template>
   <div class="mt-2">
     <h2 class="text-3xl font-bold">Characters of the Film</h2>
-    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mt-5">
+    <transition-group name="fade" tag="div" class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mt-5">
       <h1 v-if="loading">Loading...</h1>
       <h1 v-else-if="error">Error: {{ error.message }}</h1>
       <div v-else v-for="char in result?.characters.results.slice(0, charactersToShow)" :key="char.id" class="flex flex-col">
@@ -39,7 +39,7 @@ const toggleShowMore = () => {
           <h2 class="text-lg">{{ char.name }}</h2>
         </div>
       </div>
-    </div>
+    </transition-group>
     <div class="text-center mt-4">
       <button @click="toggleShowMore" class="bg-blue-500 text-white px-4 py-2 rounded">
         {{ showMore ? 'Show Less' : 'Show More' }}

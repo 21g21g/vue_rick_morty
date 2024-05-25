@@ -36,6 +36,7 @@ const { result, loading, error } = useQuery(gql`
 </script>
 
 <template>
+
     <div class="mt-2">
         <h1 v-if="loading" class="text-center text-lg">Loading...</h1>
         <h1 v-else-if="error" class="text-center text-lg text-red-500">Error: {{ error.message }}</h1>
