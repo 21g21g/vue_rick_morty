@@ -39,8 +39,8 @@ const corosol=ref([
 <template>
  <Carousel class="mt-3 border border-spacing-x-1 bg-slate-700  border-red-500">
  <Slide v-for="coro in corosol" :key="coro.id">
-        <div class="flex flex-row w-full">
-            <div class="w-1/2 md:ml-10">
+        <div class="flex flex-col md:flex-row w-full">
+            <div class="md:w-1/2 sm:w-full md:ml-10">
               <h1 class="text-red-700 text-3xl">{{coro.name}}</h1>
               <p class="w-80 ml-1">{{coro.description}}</p>
               <div class="flex flex-col ml-2  mt-2">
@@ -53,9 +53,9 @@ const corosol=ref([
                 
               </div>
             </div>
-            <div class="p-3 mr-5 w-1/2" >
+            <div class="p-3 mr-5 w-full md:w-1/2" >
                 <!-- <img :src="coro.ima1" alt="no images"> -->
-                <img class="w-96 rounded-lg" :src="coro.ima1" alt="">
+                <img class="md:w-96 w-full rounded-lg object-cover" :src="coro.ima1" alt="">
             </div>
 
         </div>

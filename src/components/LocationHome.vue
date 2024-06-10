@@ -17,7 +17,7 @@ const { result, loading, error } = useQuery(gql`
 </script>
 
 <template>
-  <div class="mt-3">
+  <div class="mt-3 p-4">
     <h1 class="text-3xl font-bold">Locations</h1>
     <div class="flex flex-wrap mt-4">
       <h1 v-if="loading" class="text-lg">Loading...</h1>

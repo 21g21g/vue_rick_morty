@@ -1,5 +1,6 @@
 <script setup>
-import { onMounted, ref } from "vue"
+import { onMounted, ref, watchEffect,onUnmounted,computed } from "vue"
+
 import { useRoute } from "vue-router"
 import { useQuery } from "@vue/apollo-composable"
 import gql from "graphql-tag"
@@ -33,15 +34,33 @@ const { result, loading, error } = useQuery(gql`
     }`, {
     id: route.params.id
 })
+
+const windowWidth = ref(window.innerWidth)
+const itemsToShow = ref(3)
+
+const updateItemsToShow = () => {
+    itemsToShow.value = window.innerWidth < 768 ? 1 : 3
+}
+
+onMounted(() => {
+    window.addEventListener('resize', updateItemsToShow)
+    updateItemsToShow()
+})
+
+watchEffect(() => {
+    itemsToShow.value = windowWidth.value < 768 ? 1 : 3
+})
+
+onUnmounted(() => {
+    window.removeEventListener('resize', updateItemsToShow)
+})
 </script>
 
 <template>
-
     <div class="mt-2">
         <h1 v-if="loading" class="text-center text-lg">Loading...</h1>
         <h1 v-else-if="error" class="text-center text-lg text-red-500">Error: {{ error.message }}</h1>
         <div v-else class="w-full flex flex-col md:flex-row gap-4">
-            
             <div class="w-full md:w-1/3 bg-slate-500 p-4 rounded-lg">
                 <div class="flex flex-row">
                     <h1 class="font-bold text-lg">Episode Name:</h1>
@@ -60,9 +79,8 @@ const { result, loading, error } = useQuery(gql`
                     <p>{{ result.episode.created }}</p>
                 </div>
             </div>
-          
             <div class="w-full md:w-2/3 bg-slate-700 p-4 rounded-lg">
-                <Carousel :items-to-show="3" :wrap-around="true" class="mt-3">
+                <Carousel :items-to-show="itemsToShow" :wrap-around="true" class="mt-3">
                     <Slide v-for="character in result.episode.characters" :key="character.id">
                         <div class="w-full bg-gray-800 p-4 rounded-lg flex flex-col justify-between">
                             <img :src="character.image" alt="No image available" class="w-full h-auto rounded-lg">

@@ -11,11 +11,12 @@ import { Icon } from '@iconify/vue';
       <div class="flex gap-3 mr-5">
         <Icon icon="logos:facebook" class="text-white cursor-pointer" />
              <a href="https://www.figma.com/design/Wdezr1OalkuJcrQ0apdmbv/ricky_movy?node-id=0-1&t=nvLPFq5QkgphLOaE-0" target="_blank"><Icon icon="logos:figma" class="text-white cursor-pointer" /></a>
-              
-        <Icon icon="ant-design:github-outlined" class="text-white cursor-pointer" />
-        <Icon icon="skill-icons:linkedin" class="text-white cursor-pointer" />
-      </div>
-    </div>
+             <a href="https://github.com/21g21g/vue_rick_morty" target="_blank">
+              <Icon icon="ant-design:github-outlined" class="text-white cursor-pointer" /> </a> 
+              <a href="https://www.linkedin.com/in/gebeyehu-assega" target="_blank">        <Icon icon="skill-icons:linkedin" class="text-white cursor-pointer" />
+                  </a>
+           </div>
+                 </div>
     <div class="mt-14 flex justify-between px-4 py-3">
       <div>
         <h1 class="text-white font-semibold">Company</h1>

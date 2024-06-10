@@ -26,7 +26,7 @@ const toggleShowMore = () => {
 };
 </script>
 <template>
-  <div class="mt-2">
+  <div class="mt-2 p-4" >
     <h2 class="text-3xl font-bold">Characters of the Film</h2>
     <transition-group name="fade" tag="div" class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mt-5">
       <h1 v-if="loading">Loading...</h1>
